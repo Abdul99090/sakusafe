@@ -37,7 +37,7 @@ async function loadSdk() {
   if (isAppCheckConfigured()) {
     const appCheckMod = await import(`${FIREBASE_CDN}/firebase-app-check.js`);
     appCheckMod.initializeAppCheck(_app, {
-      provider: new appCheckMod.ReCaptchaV3Provider(APP_CHECK_SITE_KEY),
+      provider: new appCheckMod.ReCaptchaEnterpriseProvider(APP_CHECK_SITE_KEY),
       isTokenAutoRefreshEnabled: true,
     });
   }

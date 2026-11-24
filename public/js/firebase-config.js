@@ -20,12 +20,13 @@ export const firebaseConfig = {
   appId: "1:712385748377:web:f8f21e03255585edaa8708",
 };
 
-// Firebase App Check site key (reCAPTCHA v3) — public by design; enforcement
+// Firebase App Check site key (reCAPTCHA Enterprise, score-based — the
+// successor to classic reCAPTCHA v3 in App Check) — public by design; enforcement
 // lives server-side. Firebase AI Logic enforces App Check for this project,
 // so live AI calls are rejected until a real key is in place. While this is a
 // placeholder the app skips App Check init and live AI calls are rejected by
 // enforcement, so results fall back to the honestly-labelled demo engine.
-export const APP_CHECK_SITE_KEY = "RECAPTCHA_V3_SITE_KEY_PLACEHOLDER";
+export const APP_CHECK_SITE_KEY = "6Lc8RDAuAAAAAPCUA_pBd_CZu8BSO5x2Dt6Xqc9C";
 
 export function isAppCheckConfigured() {
   return APP_CHECK_SITE_KEY !== "RECAPTCHA_V3_SITE_KEY_PLACEHOLDER";
