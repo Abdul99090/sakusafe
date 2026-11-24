@@ -16,7 +16,12 @@
 // quota, safety block), the caller falls back to the local heuristic engine in
 // analyzer.js and the UI labels the result honestly as "Demo engine".
 
-import { firebaseConfig, isFirebaseConfigured } from "./firebase-config.js";
+import {
+  firebaseConfig,
+  isFirebaseConfigured,
+  APP_CHECK_SITE_KEY,
+  isAppCheckConfigured,
+} from "./firebase-config.js";
 
 const FIREBASE_CDN = "https://www.gstatic.com/firebasejs/11.10.0";
 
@@ -29,6 +34,13 @@ async function loadSdk() {
   const appMod = await import(`${FIREBASE_CDN}/firebase-app.js`);
   const aiMod = await import(`${FIREBASE_CDN}/firebase-ai.js`);
   if (!_app) _app = appMod.initializeApp(firebaseConfig);
+  if (isAppCheckConfigured()) {
+    const appCheckMod = await import(`${FIREBASE_CDN}/firebase-app-check.js`);
+    appCheckMod.initializeAppCheck(_app, {
+      provider: new appCheckMod.ReCaptchaV3Provider(APP_CHECK_SITE_KEY),
+      isTokenAutoRefreshEnabled: true,
+    });
+  }
   _ai = aiMod.getAI(_app, { backend: new aiMod.GoogleAIBackend() });
   _sdk = aiMod;
   return _sdk;

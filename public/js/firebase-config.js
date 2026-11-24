@@ -12,13 +12,24 @@
 // See docs/FIREBASE-SETUP.md for the exact 10-minute setup click-list.
 
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyDudYF82YowXRRV-mpOCtVounYIVvwo_1Q",
+  authDomain: "sakusafe.firebaseapp.com",
+  projectId: "sakusafe",
+  storageBucket: "sakusafe.firebasestorage.app",
+  messagingSenderId: "712385748377",
+  appId: "1:712385748377:web:f8f21e03255585edaa8708",
 };
+
+// Firebase App Check site key (reCAPTCHA v3) — public by design; enforcement
+// lives server-side. Firebase AI Logic enforces App Check for this project,
+// so live AI calls are rejected until a real key is in place. While this is a
+// placeholder the app skips App Check init and live AI calls are rejected by
+// enforcement, so results fall back to the honestly-labelled demo engine.
+export const APP_CHECK_SITE_KEY = "RECAPTCHA_V3_SITE_KEY_PLACEHOLDER";
+
+export function isAppCheckConfigured() {
+  return APP_CHECK_SITE_KEY !== "RECAPTCHA_V3_SITE_KEY_PLACEHOLDER";
+}
 
 export function isFirebaseConfigured() {
   return (
