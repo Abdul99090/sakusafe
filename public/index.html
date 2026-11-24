@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SakuSafe — Is this message a scam?</title>
+<meta name="description" content="SakuSafe checks suspicious messages for scam red flags. Instant private triage on-device with Gemini Nano, deep audit in the cloud — powered by Firebase AI Logic." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">🛡️ <strong>SakuSafe</strong></div>
+  <div id="modeBadge" class="badge badge-demo" title="How analysis is currently routed">Checking AI routes…</div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Got a suspicious message?<br />Check it before it costs you.</h1>
+    <p class="sub">
+      Paste any SMS, WhatsApp or email text. SakuSafe scores its scam risk and shows you
+      <em>exactly</em> which phrases are the red flags — privately, on your own device first.
+    </p>
+  </section>
+
+  <section class="card">
+    <label for="msgInput" class="lbl">Message to check</label>
+    <div class="samples">
+      <span class="samples-lbl">Try a sample:</span>
+      <span id="sampleChips"></span>
+    </div>
+    <textarea id="msgInput" rows="7" placeholder="Paste the suspicious message here… (it stays on your device for the instant scan)"></textarea>
+
+    <div class="actions">
+      <button id="btnTriage" class="btn btn-primary">⚡ Instant scan <span class="btn-sub">on-device</span></button>
+      <button id="btnDeep" class="btn btn-ghost">☁️ Deep audit <span class="btn-sub">cloud</span></button>
+    </div>
+
+    <label class="simulate">
+      <input type="checkbox" id="chkSimulate" />
+      Simulate on-device mode <span class="hint">(for browsers without Gemini Nano — see both routes anywhere)</span>
+    </label>
+
+    <div id="routeLog" class="route-log" aria-live="polite"></div>
+  </section>
+
+  <section id="result" class="card result hidden" aria-live="polite">
+    <div class="result-head">
+      <div>
+        <div class="lbl">Risk score</div>
+        <div class="score-row"><span id="scoreNum" class="score-num">–</span><span class="score-max">/100</span></div>
+      </div>
+      <div class="gauge"><div id="gaugeFill" class="gauge-fill"></div></div>
+      <div id="engineBadge" class="badge"></div>
+    </div>
+    <p id="verdict" class="verdict"></p>
+
+    <h3>Your message, with red flags highlighted</h3>
+    <div id="highlighted" class="highlighted"></div>
+
+    <h3>Red flags found</h3>
+    <ul id="flagList" class="flags"></ul>
+
+    <div id="tacticsWrap">
+      <h3>Manipulation tactics</h3>
+      <div id="tacticChips" class="chips"></div>
+    </div>
+
+    <h3>What to do</h3>
+    <ol id="adviceList" class="advice"></ol>
+  </section>
+
+  <section class="how">
+    <h2>How SakuSafe works — hybrid AI, by design</h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-ico">⚡</div>
+        <h3>1. Instant scan — on-device</h3>
+        <p>Firebase AI Logic routes the first pass to <strong>Gemini Nano in Chrome</strong>. Your message
+        never leaves your device: private, instant, and it works with no connection at all.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-ico">☁️</div>
+        <h3>2. Deep audit — cloud</h3>
+        <p>When you want the full picture, the same Firebase AI Logic SDK escalates to
+        <strong>Gemini 2.5 Flash</strong> in the cloud for a forensic breakdown of every tactic in play.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-ico">🔒</div>
+        <h3>3. Private by default</h3>
+        <p>Scam messages contain your personal business. SakuSafe's default route keeps them
+        on your pocket — <em>saku</em> means “pocket” in Indonesian — and only sends text to the
+        cloud when you explicitly ask for the deep audit.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built with <strong>Firebase AI Logic</strong> (Gemini Nano on-device + Gemini cloud) for #BuildHybridAI 2026.
+    SakuSafe gives risk guidance, not a guarantee — always verify through official channels.</p>
+  </footer>
+</main>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

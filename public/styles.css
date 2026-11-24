@@ -1,0 +1,59 @@
+:root{
+  --bg:#0b1220; --card:#121c30; --card2:#0e1626; --line:#22304d;
+  --txt:#e8eef8; --mut:#93a4c0; --acc:#ffb020; --good:#2fbf71; --warn:#ff8a3d; --bad:#ff4d5e;
+  --chip:#1b2a45;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt)}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,18,32,.92);backdrop-filter:blur(6px);z-index:5}
+.brand{font-size:20px}
+.badge{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--chip);color:var(--mut);white-space:nowrap}
+.badge-ondevice{color:#0b1220;background:var(--good);border-color:var(--good);font-weight:600}
+.badge-cloud{color:#0b1220;background:#6ec3ff;border-color:#6ec3ff;font-weight:600}
+.badge-demo{color:var(--acc)}
+.wrap{max-width:880px;margin:0 auto;padding:28px 18px 60px}
+.hero h1{font-size:34px;line-height:1.15;margin:6px 0 10px}
+.sub{color:var(--mut);font-size:16px;line-height:1.55;max-width:640px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:22px}
+.lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:700}
+.samples{margin:10px 0 8px;font-size:13px;color:var(--mut)}
+.sample-chip{display:inline-block;margin:0 6px 6px 0;padding:5px 11px;border-radius:999px;background:var(--chip);border:1px solid var(--line);color:var(--txt);cursor:pointer;font-size:13px}
+.sample-chip:hover{border-color:var(--acc)}
+textarea{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:10px;color:var(--txt);padding:12px;font-size:15px;line-height:1.5;resize:vertical}
+textarea:focus{outline:2px solid var(--acc);outline-offset:1px}
+.actions{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+.btn{border-radius:10px;padding:12px 18px;font-size:15px;font-weight:700;cursor:pointer;border:1px solid var(--line)}
+.btn-primary{background:var(--acc);color:#14100a;border-color:var(--acc)}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;color:var(--txt)}
+.btn-ghost:hover{border-color:#6ec3ff}
+.btn-sub{display:block;font-size:11px;font-weight:500;opacity:.75}
+.btn[disabled]{opacity:.55;cursor:wait}
+.simulate{display:block;margin-top:14px;font-size:13px;color:var(--mut);cursor:pointer}
+.simulate .hint{opacity:.75}
+.route-log{margin-top:12px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;color:#7fe3b0;min-height:18px;white-space:pre-wrap}
+.hidden{display:none}
+.result-head{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.score-num{font-size:44px;font-weight:800}
+.score-max{color:var(--mut);font-size:18px}
+.gauge{flex:1;min-width:140px;height:12px;background:var(--card2);border-radius:999px;border:1px solid var(--line);overflow:hidden}
+.gauge-fill{height:100%;width:0%;background:var(--good);transition:width .6s ease,background .3s}
+.verdict{font-size:17px;font-weight:600;line-height:1.45}
+.highlighted{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.highlighted mark{background:rgba(255,77,94,.35);color:#ffd7db;border-radius:3px;padding:0 2px}
+.flags{list-style:none;padding:0;margin:0}
+.flags li{background:var(--card2);border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:8px;padding:10px 12px;margin-bottom:8px}
+.flags .flag-name{font-weight:700}
+.flags .flag-ex{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;color:var(--acc)}
+.flags .flag-why{display:block;color:var(--mut);margin-top:3px;line-height:1.45}
+.flags .none{border-left-color:var(--good);color:var(--mut)}
+.chips .chip{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:4px 11px;margin:0 6px 6px 0;font-size:13px}
+.advice{line-height:1.6;color:var(--txt)}
+.advice li{margin-bottom:4px}
+.how{margin-top:40px}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.how-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.how-ico{font-size:26px}
+.how-card p{color:var(--mut);line-height:1.55;font-size:14.5px}
+footer{margin-top:44px;color:var(--mut);font-size:13px;line-height:1.6;border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:560px){.hero h1{font-size:27px}}
