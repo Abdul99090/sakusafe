@@ -2,7 +2,7 @@
 
 **Paste any suspicious SMS, WhatsApp or email. SakuSafe scores its scam risk and shows you exactly which phrases are the red flags — privately, on your own device first.**
 
-Built for **#BuildHybridAI 2026** (Firebase Hybrid AI Hackathon) — a Gen AI web app whose core feature runs through **Firebase AI Logic**, using hybrid inference the way it was meant to be used: sensitive content is triaged **on-device**, and the cloud is only involved when you ask for it.
+**Live demo: https://sakusafe.web.app** · Built for **#BuildHybridAI 2026** (Firebase Hybrid AI Hackathon) — a Gen AI web app whose core feature runs through **Firebase AI Logic**, using hybrid inference the way it was meant to be used: sensitive content is triaged **on-device**, and the cloud is only involved when you ask for it.
 
 > *Saku* means "pocket" in Indonesian. Your messages stay in your pocket.
 
@@ -47,7 +47,7 @@ Full click-list in **[docs/FIREBASE-SETUP.md](docs/FIREBASE-SETUP.md)**. Short v
 1. Create a Firebase project, register a web app, paste its config into `public/js/firebase-config.js`.
 2. Firebase Console → **Build → AI Logic → Get started** (Gemini Developer API).
 3. `npm i -g firebase-tools && firebase login && firebase deploy --only hosting`
-4. Your live URL is `https://<project-id>.web.app`.
+4. Your live URL is `https://sakusafe.web.app` (deployed 25 Nov 2026).
 
 ## Project layout
 
